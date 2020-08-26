@@ -1,0 +1,29 @@
+import UIKit
+import PinterestLayout
+
+
+class CollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageViewHeightLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    
+    var image: UIImage? {
+        didSet {
+            if let image = image {
+                imageView.image = image
+            } else {
+                imageView.backgroundColor = .lightGray
+            }
+        }
+    }
+    
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.apply(layoutAttributes)
+        if let attributes = layoutAttributes as? PinterestLayoutAttributes {
+            //change image view height by changing its constraint
+            imageViewHeightLayoutConstraint.constant = attributes.imageHeight
+        }
+    }
+}

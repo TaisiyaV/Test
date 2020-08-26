@@ -142,10 +142,55 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.image` struct is generated, and contains static references to 6 images.
   struct image {
+    /// Image `girl1`.
+    static let girl1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "girl1")
+    /// Image `girl2`.
+    static let girl2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "girl2")
+    /// Image `girl3`.
+    static let girl3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "girl3")
+    /// Image `girl`.
+    static let girl = Rswift.ImageResource(bundle: R.hostingBundle, name: "girl")
+    /// Image `likes_bg`.
+    static let likes_bg = Rswift.ImageResource(bundle: R.hostingBundle, name: "likes_bg")
     /// Image `shadow`.
     static let shadow = Rswift.ImageResource(bundle: R.hostingBundle, name: "shadow")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "girl", bundle: ..., traitCollection: ...)`
+    static func girl(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.girl, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "girl1", bundle: ..., traitCollection: ...)`
+    static func girl1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.girl1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "girl2", bundle: ..., traitCollection: ...)`
+    static func girl2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.girl2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "girl3", bundle: ..., traitCollection: ...)`
+    static func girl3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.girl3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "likes_bg", bundle: ..., traitCollection: ...)`
+    static func likes_bg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.likes_bg, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "shadow", bundle: ..., traitCollection: ...)`
@@ -237,7 +282,7 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
+      typealias InitialController = UIKit.UIViewController
 
       let bundle = R.hostingBundle
       let name = "Main"

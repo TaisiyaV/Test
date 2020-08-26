@@ -1,10 +1,3 @@
-//
-//  SettingCellItem.swift
-//  Test
-//
-//  Created by tasya on 24.08.2020.
-//  Copyright © 2020 Taisiya V. All rights reserved.
-//
 
 import UIKit
 
