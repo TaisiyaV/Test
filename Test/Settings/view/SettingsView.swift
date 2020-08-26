@@ -1,3 +1,4 @@
+/*
 import UIKit
 import SnapKit
 
@@ -90,3 +91,4 @@ extension SettingsView: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
+*/

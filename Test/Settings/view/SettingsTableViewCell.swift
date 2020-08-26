@@ -1,4 +1,4 @@
-
+/*
 import UIKit
 
 class SettingsTableViewCell: UITableViewCell {
@@ -106,3 +106,4 @@ extension UILabel {
       }
 }
 
+*/

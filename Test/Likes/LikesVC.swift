@@ -1,30 +1,72 @@
 
 import UIKit
+import SnapKit
 import PinterestLayout
 
-class LikesVC: PinterestVC {
+class LikesVC: UIViewController {
     
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
-        let text = "Some text. Some text. Some text. Some text."
+        view.addSubview(likesCollectionView)
+        view.backgroundColor = .white
         
-        items = [
-            PinterestItem(image: R.image.girl()!, text: text),
-            PinterestItem(image: R.image.girl1()!, text: text),
-            PinterestItem(image: R.image.girl2()!, text: text),
-            PinterestItem(image: R.image.girl3()!, text: text),
-        ]
+        likesCollectionView.dataSource = self
+        likesCollectionView.delegate = self
         
-        collectionView?.contentInset = UIEdgeInsets(
-            top: 20,
-            left: 5,
-            bottom: 49,
-            right: 5
-        )
+        likesCollectionView.snp.makeConstraints { (m) in
+            m.left.right.bottom.top.equalToSuperview()
+        }
+        
+        likesCollectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionCell")
+    
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
+    var likesCollectionView: UICollectionView = {
+        let layout = PinterestLayout()
+        
+        layout.delegate = self
+        layout.cellPadding = 5
+        layout.numberOfColumns = 2
+
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        return cv
+    }()
+
+    let images = [R.image.girl(), R.image.girl1(), R.image.girl2(), R.image.girl3()] 
+   
+}
+
+
+extension LikesVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionViewCell
+        
+        cell.image = images[indexPath.item]!
+        
+        return cell
     }
 }
+//
+//extension LikesVC: PinterestLayoutDelegate {
+//
+//    func collectionView(collectionView: UICollectionView,
+//                        heightForImageAtIndexPath indexPath: IndexPath,
+//                        withWidth: CGFloat) -> CGFloat {
+//        let image = images[indexPath.item]
+//
+//        return image!.height(forWidth: withWidth)
+//    }
+//
+//    func collectionView(collectionView: UICollectionView,
+//                        heightForAnnotationAtIndexPath indexPath: IndexPath,
+//                        withWidth: CGFloat) -> CGFloat {
+//        return 0
+//    }
+//}
+
