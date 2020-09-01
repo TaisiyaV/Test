@@ -1,29 +1,25 @@
 PODS:
-  - PinterestLayout (1.0.3)
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
   - R.swift.Library (5.2.0)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
-  - PinterestLayout
   - R.swift
   - SnapKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - PinterestLayout
     - R.swift
     - R.swift.Library
   trunk:
     - SnapKit
 
 SPEC CHECKSUMS:
-  PinterestLayout: f1c7ec0254ffa842d69f1b43e4436c8ded4359b9
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: c3e1227cc609c9343a45467e4ccfcc69cb845a15
+PODFILE CHECKSUM: 292b2af641e78941b3991d6cedae746e8c797f0f
 
 COCOAPODS: 1.9.3

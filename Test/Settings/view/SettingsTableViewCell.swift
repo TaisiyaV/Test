@@ -1,4 +1,4 @@
-/*
+
 import UIKit
 
 class SettingsTableViewCell: UITableViewCell {
@@ -6,7 +6,7 @@ class SettingsTableViewCell: UITableViewCell {
     let leftIcon: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+//        iv.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return iv
     }()
 
@@ -21,7 +21,7 @@ class SettingsTableViewCell: UITableViewCell {
     let rightIcon: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+//        iv.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return iv
     }()
 
@@ -42,7 +42,7 @@ class SettingsTableViewCell: UITableViewCell {
         bgImageView.snp.makeConstraints { (m) in
             m.top.equalToSuperview()
             m.left.right.equalToSuperview().inset(16.0.h_relation)
-            m.height.equalTo(65.v_relation)
+            m.height.equalTo(65.0.v_relation)
             m.bottom.equalToSuperview()
         }
 
@@ -106,4 +106,3 @@ extension UILabel {
       }
 }
 
-*/

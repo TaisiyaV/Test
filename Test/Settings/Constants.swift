@@ -1,10 +1,9 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
 struct Images {
-    static let person = UIImage(systemName: "person")!
-    static let bell = UIImage(systemName: "bell")!
-    static let hand = UIImage(systemName: "hand.raised")!
-    static let doc = UIImage(systemName: "doc")!
+    static let person = R.image.person()!
+    static let bell = R.image.bell()!
+    static let hand = R.image.handRaised()!
+    static let doc = R.image.doc()!
 }

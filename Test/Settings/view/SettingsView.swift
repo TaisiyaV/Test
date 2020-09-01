@@ -1,4 +1,4 @@
-/*
+
 import UIKit
 import SnapKit
 
@@ -68,19 +68,9 @@ extension SettingsView: UITableViewDelegate, UITableViewDataSource {
 //    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 66))
-
         let label = SectionView()
-        
-        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
-        
-        for _ in datasource {
-            label.sectionLabel.text = datasource[section].title
-        }
-
-        headerView.addSubview(label)
-
-        return headerView
+        label.sectionLabel.text = datasource[section].title
+        return label
     }
     
     
@@ -91,4 +81,4 @@ extension SettingsView: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
-*/
+

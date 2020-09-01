@@ -1,9 +1,9 @@
 
 import UIKit
 import SnapKit
-import PinterestLayout
 
 class LikesVC: UIViewController {
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,19 +21,31 @@ class LikesVC: UIViewController {
         likesCollectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionCell")
     
     }
+
+//    let likesCollectionView: UICollectionView = {
+//        let layout = UICollectionViewFlowLayout()
+//        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+//        layout.itemSize = CGSize(width: 60, height: 60)
+//        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+//        cv.backgroundColor = .black
+//        return cv
+//    }()
     
     var likesCollectionView: UICollectionView = {
-        let layout = PinterestLayout()
-        
-        layout.delegate = self
-        layout.cellPadding = 5
-        layout.numberOfColumns = 2
 
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+//        let layout: PinterestLayout = {
+//            let l = PinterestLayout()
+//      //     l.delegate = self
+//            l.cellPadding = 5
+//            l.numberOfColumns = 2
+//            return l
+//        }()
+
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
         return cv
     }()
 
-    let images = [R.image.girl(), R.image.girl1(), R.image.girl2(), R.image.girl3()] 
+    let images = [R.image.girl(), R.image.girl1(), R.image.girl2(), R.image.girl3()]
    
 }
 
@@ -47,12 +59,12 @@ extension LikesVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionViewCell
         
-        cell.image = images[indexPath.item]!
+  //      cell.image = images[indexPath.item]!
         
         return cell
     }
 }
-//
+
 //extension LikesVC: PinterestLayoutDelegate {
 //
 //    func collectionView(collectionView: UICollectionView,

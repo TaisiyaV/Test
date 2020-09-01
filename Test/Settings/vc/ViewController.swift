@@ -1,4 +1,4 @@
-/*
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -31,4 +31,4 @@ extension ViewController {
         return [section1, section2, section3]
     }
 }
-*/
+
