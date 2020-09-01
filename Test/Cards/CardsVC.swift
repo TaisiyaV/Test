@@ -11,7 +11,7 @@ struct InfoCellItem {
 
 class CardsVC: UIViewController {
     
-    var dataInfo: [InfoCellItem] = []
+//    var dataInfo: [InfoCellItem] = []
     
     let tableView = UITableView()
     
@@ -56,10 +56,27 @@ class CardsVC: UIViewController {
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         
-        dataInfo = dataRetrieval()
-
-    
+//        dataInfo = dataRetrieval()
+        
+//        
+//        var leftRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeMade(_:)))
+//           leftRecognizer.direction = .left
+//
+//        var rightRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeMade(_:)))
+//           rightRecognizer.direction = .right
+//           self.view.addGestureRecognizer(leftRecognizer)
+//           self.view.addGestureRecognizer(rightRecognizer)
+  
     }
+    
+//    @IBAction func swipeMade(_ sender: UISwipeGestureRecognizer) {
+//       if sender.direction == .left {
+//          print("No")
+//       }
+//       if sender.direction == .right {
+//          print("Yes")
+//       }
+//    }
     
     func setupNavBar () {
         
@@ -72,18 +89,20 @@ class CardsVC: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = .black
         
     }
+//    
+//    func dataRetrieval () -> [InfoCellItem] {
+//        let info1 = InfoCellItem(icon: R.image.location(), title: "City")
+//        let info2 = InfoCellItem(icon: R.image.height(), title: "6’5” Feet Tall")
+//        let info3 = InfoCellItem(icon: R.image.relationships(), title: "Signle")
+//        let info4 = InfoCellItem(icon: R.image.diploma1(), title: "Houston University, 2012")
+//        let info5 = InfoCellItem(icon: R.image.languages(), title: "English, Japanese")
+//        let info6 = InfoCellItem(icon: R.image.work(), title: "KickPick, Salesman")
+//        let info7 = InfoCellItem(icon: R.image.live(), title: "Living with parents")
+//
+//        return [info1, info2, info3, info4, info5, info6, info7]
+//    }
     
-    func dataRetrieval () -> [InfoCellItem] {
-        let info1 = InfoCellItem(icon: R.image.location(), title: "City")
-        let info2 = InfoCellItem(icon: R.image.height(), title: "6’5” Feet Tall")
-        let info3 = InfoCellItem(icon: R.image.relationships(), title: "Signle")
-        let info4 = InfoCellItem(icon: R.image.diploma1(), title: "Houston University, 2012")
-        let info5 = InfoCellItem(icon: R.image.languages(), title: "English, Japanese")
-        let info6 = InfoCellItem(icon: R.image.work(), title: "KickPick, Salesman")
-        let info7 = InfoCellItem(icon: R.image.live(), title: "Living with parents")
-        
-        return [info1, info2, info3, info4, info5, info6, info7]
-    }
+    
     
 
 }
@@ -97,11 +116,11 @@ extension CardsVC: UITableViewDelegate, UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 2 {
-            return dataInfo.count
-        } else {
+//        if section == 2 {
+//            return dataInfo.count
+//        } else {
             return 1
-        }
+//        }
     }
     
     
@@ -116,8 +135,8 @@ extension CardsVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: infoCellId) as! InfoCell
-            let info = dataInfo[indexPath.row]
-            cell.setInfo(info: info)
+//            let info = dataInfo[indexPath.row]
+//            cell.setInfo(info: info)
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: firstQuestionCellId) as! FirstQuestionCell
