@@ -5,5 +5,6 @@ use_frameworks!
 target 'Test' do
     pod 'SnapKit'
     pod 'R.swift'
+pod "Koloda"
 
 end

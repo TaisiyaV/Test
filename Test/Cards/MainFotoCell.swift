@@ -6,6 +6,7 @@ class MainFotoCell: UITableViewCell {
     let foto: UIImageView = {
         let f = UIImageView()
         f.image = R.image.foto()
+        f.contentMode = .scaleAspectFill
         return f
     }()
     
@@ -39,7 +40,7 @@ class MainFotoCell: UITableViewCell {
     let emojiImage: UIImageView = {
        let i = UIImageView()
         i.image = R.image.emoji()
-        i.contentMode = .scaleAspectFit
+        i.contentMode = .scaleAspectFill
         return i
     }()
     
@@ -57,25 +58,25 @@ class MainFotoCell: UITableViewCell {
 
         
         foto.snp.makeConstraints { (m) in
-            m.top.bottom.equalToSuperview().inset(12.0.v_relation)
-            m.left.right.equalToSuperview().inset(16.0.h_relation)
-            m.height.equalTo(614.0.h_relation)
+            m.top.bottom.equalToSuperview()
+            m.left.right.equalToSuperview()
+            m.height.equalTo(614.0.v_relation)
         }
         
         nameLabel.snp.makeConstraints { (m) in
             m.height.equalTo(41.5.h_relation)
-            m.left.right.equalToSuperview().inset(37.0.h_relation)
+            m.left.right.equalToSuperview().inset(21.0.h_relation)
             m.top.equalToSuperview().inset(404.3.v_relation)
         }
         
         descriptionLabel.snp.makeConstraints { (m) in
             m.height.equalTo(51.h_relation)
-            m.left.right.equalToSuperview().inset(32.0.h_relation)
+            m.left.right.equalToSuperview().inset(16.0.h_relation)
             m.top.equalTo(nameLabel.snp.bottom).inset(-16.25.v_relation)
         }
         
         emojiImage.snp.makeConstraints { (m) in
-            m.left.equalToSuperview().inset(121.0.h_relation)
+            m.left.equalToSuperview().inset(105.0.h_relation)
             m.bottom.equalToSuperview().inset(33.35.v_relation)
             m.height.equalTo(18.0.h_relation)
             m.width.equalTo(18.65.v_relation)

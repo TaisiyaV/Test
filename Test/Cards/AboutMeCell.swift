@@ -54,14 +54,14 @@ class AboutMeCell: UITableViewCell {
         backgroundColor = .none
         
         background.snp.makeConstraints { (m) in
-            m.left.right.equalToSuperview().inset(16.0.h_relation)
+            m.left.right.equalToSuperview() 
             m.top.equalToSuperview().inset(32.0.v_relation)
             m.bottom.equalToSuperview().inset(8.0.v_relation)
         }
         
         iconGender.snp.makeConstraints { (m) in
             m.top.equalToSuperview().inset(49.0.v_relation)
-            m.left.equalToSuperview().inset(36.0.h_relation)
+            m.left.equalToSuperview().inset(20.0.h_relation) //.inset(36.0.h_relation)
             m.bottom.equalToSuperview().inset(24.0.v_relation)
             m.height.equalTo(24.0.v_relation)
             m.width.equalTo(24.0.v_relation)

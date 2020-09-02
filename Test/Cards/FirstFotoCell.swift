@@ -1,10 +1,3 @@
-//
-//  FirstFotoCell.swift
-//  Test
-//
-//  Created by tasya on 27.08.2020.
-//  Copyright © 2020 Taisiya V. All rights reserved.
-//
 
 import UIKit
 
@@ -33,12 +26,12 @@ class FirstFotoCell: UITableViewCell {
         
         heartImage.snp.makeConstraints { (m) in
             m.top.equalToSuperview().inset(28.0.v_relation)
-            m.left.equalToSuperview().inset(319.0.h_relation)
-            m.right.equalToSuperview().inset(32.0.h_relation)
+            m.left.equalToSuperview().inset(303.0.h_relation)
+            m.right.equalToSuperview().inset(16.0.h_relation)
         }
         
         fotoImage.snp.makeConstraints { (m) in
-            m.left.right.equalToSuperview().inset(16.0.h_relation)
+            m.left.right.equalToSuperview()
             m.top.bottom.equalToSuperview().inset(8.0.v_relation)
             m.height.equalTo(329.0.h_relation)
         }
